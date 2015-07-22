@@ -1,4 +1,4 @@
-# Vanilla Javascript Helper Functions, Ajax, Effects, DOM manipulation, Styles, Utilities. 
+# Vanilla Javascript Helper Functions, Ajax, Effects, DOM manipulation, Styles, Utilities, Without jQuery. 
 
 Easy to use Vanilla Javascript Helper Functions Collection, Ajax, Effects, DOM manipulation, Styles, Utilities ...
 
@@ -132,6 +132,7 @@ if url is: http://example.com/faa/foo/boo
 vanillaHelpers.urlSegment(2);
 ````
 
+Will return foo
 
 ## Check if element hass specific class
 
