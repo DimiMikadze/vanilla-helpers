@@ -132,7 +132,6 @@ if url is: http://example.com/faa/foo/boo
 vanillaHelpers.urlSegment(2);
 ````
 
-Will output foo
 
 ## Check if element hass specific class
 

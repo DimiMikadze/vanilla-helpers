@@ -1,0 +1,29 @@
+{
+  "name": "vanilla-helpers",
+  "version": "0.0.1",
+  "homepage": "https://github.com/DimitriMikadze/vanilla-helpers",
+  "authors": [
+    "Dimitri Mikadze"
+  ],
+  "description": "Easy to use Vanilla Javascript Helper Functions Collection, Ajax, Effects, DOM manipulation, Styles, Utilities",
+  "main": "vanillaHelpers.js",
+  "keywords": [
+    "vanilla",
+    "javascript",
+    "collection",
+    "functions",
+    "ajax",
+    "animations",
+    "effects",
+    "dom",
+    "manipulation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
