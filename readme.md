@@ -19,7 +19,7 @@ bower install vanilla-helpers
 
 ## Getting Started
 
-include vanillaHelpers.js OR vanillaHelpers.min.js
+include js/vanillaHelpers.js OR js/vanillaHelpers.min.js
 
 
 ## Some Examples
