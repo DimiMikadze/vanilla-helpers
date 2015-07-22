@@ -21,10 +21,6 @@ bower install vanilla-helpers
 
 include js/vanillaHelpers.js OR js/vanillaHelpers.min.js
 
-
-## Some Examples
-
-
 ## Example Ajax GET
 
 ````
