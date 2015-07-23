@@ -181,6 +181,18 @@ vanillaHelpers = {
 	*/
 	hasClass: function(element, className) {
 		
+    	return this.hasCls(element, className);
+	},
+
+	/**
+	* Check if element contains class
+	*
+	* @param element
+	* @param class
+	* @return boolean
+	*/
+	hasCls: function(element, className) {
+		
     	return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -  1;
 	},
 
