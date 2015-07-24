@@ -130,10 +130,10 @@ vanillaHelpers.urlSegment(2);
 
 Will return foo
 
-## Check if element hass specific class
+## Check if element has specific class
 
 ````
-vanillaHelpers.hasClass(document.getElementById('test'), 'foo');
+vanillaHelpers.hasCls(document.getElementById('test'), 'foo');
 ````
 
 ## Add Class
