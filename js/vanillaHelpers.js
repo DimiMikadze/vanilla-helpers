@@ -313,4 +313,4 @@ vanillaHelpers = {
 		return false;
 	}
 
-}
+};
