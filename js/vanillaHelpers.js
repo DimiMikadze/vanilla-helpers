@@ -102,8 +102,10 @@ vanillaHelpers = {
 			start = start || timestamp;
 			var progress = timestamp - start;
 			element.style.opacity = progress / speed;
-			if (progress >= speed && callback && typeof(callback) === "function") {
-				callback();
+			if (progress >= speed) {
+				if (callback && typeof(callback) === "function") {
+					callback();
+				}
 			} else {
 				window.requestAnimationFrame(animate);
 			}
@@ -126,8 +128,10 @@ vanillaHelpers = {
 			start = start || timestamp;
 			var progress = timestamp - start;
 			element.style.opacity = 1 - progress / speed;
-			if (progress >= speed && callback && typeof(callback) === "function") {
-				callback();
+			if (progress >= speed) {
+				if (callback && typeof(callback) === "function") {
+					callback();
+				}
 			} else {
 				window.requestAnimationFrame(animate);
 			}
