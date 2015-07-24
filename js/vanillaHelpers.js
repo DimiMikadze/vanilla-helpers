@@ -9,23 +9,23 @@ vanillaHelpers = {
 	/**
 	* Ajax GET request
 	*
-	* @param url 
+	* @param url
 	* @param callback function
 	* @return response
 	*/
 	ajaxGet: function(url, callback) {
 
-	    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-	    xhr.open('GET', url);
-	    xhr.onreadystatechange = function() {
-	        if (xhr.readyState > 3 && xhr.status === 200) {
-	        	callback(xhr.responseText);
-	        }
-	    };
-	    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-	    xhr.send();
+		var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+		xhr.open('GET', url);
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState > 3 && xhr.status === 200) {
+				callback(xhr.responseText);
+			}
+		};
+		xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+		xhr.send();
 
-	    return xhr;
+		return xhr;
 	},
 
 	/**
@@ -38,22 +38,22 @@ vanillaHelpers = {
 	*/
 	ajaxPost: function(url, data, callback) {
 
-	    var params = typeof data == 'string' ? data : Object.keys(data).map(
-	            function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
-	        ).join('&');
+		var params = typeof data == 'string' ? data : Object.keys(data).map(
+				function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
+			).join('&');
 
-	    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-	    xhr.open('POST', url);
-	    xhr.onreadystatechange = function() {
-	        if (xhr.readyState > 3 && xhr.status === 200) { 
-	        	callback(xhr.responseText); 
-	        }
-	    };
-	    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-	    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	    xhr.send(params);
+		var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+		xhr.open('POST', url);
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState > 3 && xhr.status === 200) {
+				callback(xhr.responseText);
+			}
+		};
+		xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		xhr.send(params);
 
-	    return xhr;
+		return xhr;
 	},
 
 	/**
@@ -64,11 +64,11 @@ vanillaHelpers = {
 	*/
 	nextElement: function(element) {
 
-	    do {
-	        element = element.nextSibling;
-	    } while (element && element.nodeType !== 1);
+		do {
+			element = element.nextSibling;
+		} while (element && element.nodeType !== 1);
 
-	    return element;        
+		return element;
 	},
 
 	/**
@@ -79,18 +79,18 @@ vanillaHelpers = {
 	*/
 	previousElement: function(element) {
 
-	    do {
-	        element = element.previousSibling;
-	    } while (element && element.nodeType !== 1);
+		do {
+			element = element.previousSibling;
+		} while (element && element.nodeType !== 1);
 
-	    return element;  
+		return element;
 	},
 
 	/**
 	* Fade in animation
 	*
-	* @param element  
-	* @param animation speed 
+	* @param element 
+	* @param animation speed
 	* @param callback function
 	*/
 	fadeIn: function(element, speed, callback) {
@@ -100,11 +100,11 @@ vanillaHelpers = {
 		var changeOpacity = setInterval(function() {
 			
 			element.style.opacity = Number(element.style.opacity) + 0.02;
-			if(element.style.opacity >= 1) {
+			if (element.style.opacity >= 1) {
 				clearInterval(changeOpacity);
 				if (callback && typeof(callback) === "function") {
-	        		callback();
-	    		}
+					callback();
+				}
 			}
 		}, speed / 50);
 	},
@@ -112,8 +112,8 @@ vanillaHelpers = {
 	/**
 	* Fade Out animation
 	*
-	* @param element  
-	* @param animation speed 
+	* @param element 
+	* @param animation speed
 	* @param callback function
 	*/
 	fadeOut: function(element, speed, callback) {
@@ -123,11 +123,11 @@ vanillaHelpers = {
 		var changeOpacity = setInterval(function() {
 
 			element.style.opacity -= 0.02;
-			if(element.style.opacity <= 0) {
+			if (element.style.opacity <= 0) {
 				clearInterval(changeOpacity);
 				if (callback && typeof(callback) === "function") {
-	        		callback();
-	    		}
+					callback();
+				}
 			}
 
 		}, speed / 50);
@@ -136,8 +136,8 @@ vanillaHelpers = {
 	/**
 	* set browser vendor properties
 	*
-	* @param element  
-	* @param property CSS3 set of specifications e.g Transition 
+	* @param element 
+	* @param property CSS3 set of specifications e.g Transition
 	* @param value CSS3 set of specifications e.g Transition speed '1s'
 	*/
 	setVendor: function(element, property, value) {
@@ -157,7 +157,7 @@ vanillaHelpers = {
 	*/
 	randomInt: function(min, max) {
 
-    	return Math.floor(Math.random() * (max - min + 1) + min);
+		return Math.floor(Math.random() * (max - min + 1) + min);
 	},
 
 	/**
@@ -181,7 +181,7 @@ vanillaHelpers = {
 	*/
 	hasCls: function(element, className) {
 		
-    	return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -  1;
+		return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > - 1;
 	},
 
 	/**
@@ -193,10 +193,10 @@ vanillaHelpers = {
 	addCls: function(element, className) {
 
 		if (element.classList) {
-  			element.classList.add(className);
-  		} else {
-  			element.className += ' ' + className;
-  		}
+			element.classList.add(className);
+		} else {
+			element.className += ' ' + className;
+		}
 	},
 
 	/**
@@ -208,10 +208,10 @@ vanillaHelpers = {
 	removeCls: function(element, className) {
 		
 		if (element.classList) {
-  			element.classList.remove(className);
-  		} else {
-  			element.className = element.className.replace(new RegExp(className, "g"), "");
-  		}
+			element.classList.remove(className);
+		} else {
+			element.className = element.className.replace(new RegExp(className, "g"), "");
+		}
 
 	},
 
@@ -229,10 +229,11 @@ vanillaHelpers = {
 			var classes = element.className.split(' ');
 			var existingIndex = classes.indexOf(className);
 
-			if (existingIndex >= 0)
-			classes.splice(existingIndex, 1);
-			else
-			classes.push(className);
+			if (existingIndex >= 0) {
+				classes.splice(existingIndex, 1);
+			} else {
+				classes.push(className);
+			}
 
 			el.className = classes.join(' ');
 		}	
@@ -249,19 +250,19 @@ vanillaHelpers = {
 	*/
 	matches: function(element, selector) {
 
-	  	return (element.matches || 
-	  			element.matchesSelector || 
-	  			element.msMatchesSelector || 
-	  			element.mozMatchesSelector || 
-	  			element.webkitMatchesSelector || 
-	  			element.oMatchesSelector).call(element, selector);
+		return (element.matches ||
+				element.matchesSelector ||
+				element.msMatchesSelector ||
+				element.mozMatchesSelector ||
+				element.webkitMatchesSelector ||
+				element.oMatchesSelector).call(element, selector);
 	},
 
 	/**
 	* String starts with
-	* 
+	*
 	* @param string
-	* @param string suffix 
+	* @param string suffix
 	* @return boolean
 	*/
 	startsWith: function(string, suffix) {
@@ -272,14 +273,14 @@ vanillaHelpers = {
 
 	/**
 	* String ends with
-	* 
+	*
 	* @param string
-	* @param string suffix 
+	* @param string suffix
 	* @return boolean
 	*/
 	endsWith: function(string, suffix) {
 
-    	return string.indexOf(suffix, string.length - suffix.length) !== -1;
+		return string.indexOf(suffix, string.length - suffix.length) !== -1;
 	},
 
 	/**
@@ -304,12 +305,12 @@ vanillaHelpers = {
 	*/
 	inArray: function(array, value) {
 
-	    for(var i = 0; i < array.length; i++) {
-	        if(array[i] === value) {
-	        	return true;
-	        }
-	    }
-    	return false;
+		for(var i = 0; i < array.length; i++) {
+			if (array[i] === value) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }
