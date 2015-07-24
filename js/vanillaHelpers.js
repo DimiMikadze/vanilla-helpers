@@ -89,48 +89,49 @@ vanillaHelpers = {
 	/**
 	* Fade in animation
 	*
-	* @param element 
+	* @param element
 	* @param animation speed
 	* @param callback function
 	*/
 	fadeIn: function(element, speed, callback) {
-
-		( ! element.style.opacity) ? element.style.opacity = 0 : '';
-
-		var changeOpacity = setInterval(function() {
-			
-			element.style.opacity = Number(element.style.opacity) + 0.02;
-			if (element.style.opacity >= 1) {
-				clearInterval(changeOpacity);
-				if (callback && typeof(callback) === "function") {
-					callback();
-				}
+		if ( ! element.style.opacity) {
+			element.style.opacity = 0;
+		}
+		var start = null;
+		window.requestAnimationFrame(function animate(timestamp) {
+			start = start || timestamp;
+			var progress = timestamp - start;
+			element.style.opacity = progress / speed;
+			if (progress >= speed && callback && typeof(callback) === "function") {
+				callback();
+			} else {
+				window.requestAnimationFrame(animate);
 			}
-		}, speed / 50);
+		});
 	},
 
 	/**
 	* Fade Out animation
 	*
-	* @param element 
+	* @param element
 	* @param animation speed
 	* @param callback function
 	*/
 	fadeOut: function(element, speed, callback) {
-
-		( ! element.style.opacity) ? element.style.opacity = 1 : '';
-
-		var changeOpacity = setInterval(function() {
-
-			element.style.opacity -= 0.02;
-			if (element.style.opacity <= 0) {
-				clearInterval(changeOpacity);
-				if (callback && typeof(callback) === "function") {
-					callback();
-				}
+		if ( ! element.style.opacity) {
+			element.style.opacity = 1;
+		}
+		var start = null;
+		window.requestAnimationFrame(function animate(timestamp) {
+			start = start || timestamp;
+			var progress = timestamp - start;
+			element.style.opacity = 1 - progress / speed;
+			if (progress >= speed && callback && typeof(callback) === "function") {
+				callback();
+			} else {
+				window.requestAnimationFrame(animate);
 			}
-
-		}, speed / 50);
+		});
 	},
 
 	/**
