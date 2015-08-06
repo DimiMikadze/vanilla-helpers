@@ -1,5 +1,5 @@
 /*
- vanillaHelpers v0.1
+ vanillaHelpers v0.2
  (c) Dimitri Mikadze
  https://github.com/DimitriMikadze/vanilla-helpers
  License: MIT
@@ -94,9 +94,9 @@ vanillaHelpers = {
 	* @param callback function
 	*/
 	fadeIn: function(element, speed, callback) {
-		if ( ! element.style.opacity) {
-			element.style.opacity = 0;
-		}
+
+		if ( ! element.style.opacity) { element.style.opacity = 0; }
+		
 		var start = null;
 		window.requestAnimationFrame(function animate(timestamp) {
 			start = start || timestamp;
@@ -120,9 +120,9 @@ vanillaHelpers = {
 	* @param callback function
 	*/
 	fadeOut: function(element, speed, callback) {
-		if ( ! element.style.opacity) {
-			element.style.opacity = 1;
-		}
+
+		if ( ! element.style.opacity) { element.style.opacity = 1; }
+
 		var start = null;
 		window.requestAnimationFrame(function animate(timestamp) {
 			start = start || timestamp;
