@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "homepage": "https://github.com/DimitriMikadze/vanilla-helpers",
   "authors": [
-    "Dimitri Mikadze"
+    "Dimitri Mikadze",
+    "Hendrik Werner"
   ],
   "description": "Easy to use Vanilla Javascript Helper Functions Collection, Ajax, Effects, DOM manipulation, Styles, Utilities",
   "main": "vanillaHelpers.js",
